@@ -1,0 +1,257 @@
+
+/* ESTILO GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f7ff;
+    color: #183153;
+    line-height: 1.6;
+}
+
+/* ENCABEZADO */
+header {
+    background-color: #063b78;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .container.logo{
+    width: 100px;
+    border-radius: 50%;
+    border: solid black;
+}
+
+header h1 {
+    font-family: "Engravers MT", Georgia, serif;
+    color: #ffe36e;
+    text-shadow: 2px 2px 5px #1688ff;
+    font-size: 30px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #ffe36e;
+}
+
+/* PORTADA */
+.hero {
+    background: linear-gradient(135deg, #063b78, #1688ff);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.hero img {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 20px 10px 0;
+    border: 3px solid white;
+}
+
+/* SECCIONES */
+section {
+    padding: 45px 7%;
+    scroll-margin-top: 150px;
+}
+
+section h2 {
+    text-align: center;
+    color: #0756a3;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+section h3 {
+    color: #0878c9;
+    margin-bottom: 10px;
+}
+
+section p {
+    margin-bottom: 15px;
+}
+
+/* TARJETAS */
+.contenedor,
+.cards,
+.galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tarjeta,
+.card {
+    background-color: white;
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px #b5cde8;
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover,
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta img,
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+/* VENTAJAS Y DESVENTAJAS */
+.ventajas {
+    background-color: #dceeff;
+}
+
+.ventajas ul,
+.card ul {
+    padding-left: 22px;
+    margin-bottom: 15px;
+}
+
+/* GALERÍA */
+.galeria img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px #b5cde8;
+}
+
+/* CUESTIONARIO */
+#cuestionario {
+    background-color: #e3f1ff;
+}
+
+.pregunta {
+    background-color: white;
+    padding: 18px;
+    margin: 15px auto;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px #c1d7ee;
+}
+
+.pregunta label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+button {
+    background-color: #0756a3;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1688ff;
+}
+
+/* FORMULARIO */
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #9bbde0;
+    border-radius: 8px;
+    margin: 8px 0 15px;
+    font-family: Arial, sans-serif;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #1688ff;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: #063b78;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+/* ADAPTACIÓN A CELULARES */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 23px;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    .hero img {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    section {
+        padding: 30px 5%;
+    }
+
+    section h2 {
+        font-size: 25px;
+    }
+
+    .tarjeta,
+    .card {
+        width: 100%;
+    }
+
+    .galeria img {
+        width: 100%;
+        height: auto;
+    }
+}

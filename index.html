@@ -1,0 +1,1316 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tecnología a través del tiempo</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --azul: #082b59;
+    --azul-medio: #1259a7;
+    --azul-pastel: #cfe7ff;
+    --amarillo: #ffeb3b;
+    --blanco: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #26364a;
+    background: #f3f8ff;
+    line-height: 1.7;
+}
+
+section {
+    padding: 65px 7%;
+    scroll-margin-top: 100px;
+}
+
+h2, h3 {
+    font-family: "Engravers MT", Georgia, serif;
+    font-weight: normal;
+}
+
+h2 {
+    color: #123e70;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #15528c;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* ENCABEZADO FIJO */
+
+header {
+    background: #071e42;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px #0003;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.logo-icono {
+    font-size: 32px;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+.logo h2 {
+    color: white;
+    font-size: 15px;
+    margin: 0;
+}
+
+.logo small {
+    font-family: Arial, sans-serif;
+    color: #b9dcff;
+    font-size: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    font-size: 13px;
+    border-radius: 7px;
+}
+
+nav a:hover {
+    background: #1859a0;
+    color: var(--amarillo);
+}
+
+.menu {
+    display: none;
+    font-size: 25px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* INICIO */
+
+.inicio {
+    background: linear-gradient(135deg, #cfe7ff, #a9d4ff);
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 35px;
+    min-height: 470px;
+}
+
+.inicio h1 {
+    font-family: "Showcard Gothic", Georgia, serif;
+    color: var(--amarillo);
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.3;
+    margin-bottom: 22px;
+    text-shadow:
+        0 0 5px #007bff,
+        0 0 12px #168bff,
+        0 0 25px #0874ff,
+        2px 3px 3px #183b68;
+}
+
+.inicio p {
+    color: #173d63;
+    font-size: 17px;
+}
+
+.etiqueta {
+    color: #246cb1;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.boton {
+    display: inline-block;
+    background: #0b4f96;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px 5px 5px 0;
+}
+
+.boton:hover {
+    background: #07366c;
+}
+
+.imagenes-inicio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.imagenes-inicio img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.imagenes-inicio img:first-child {
+    grid-column: 1 / 3;
+    height: 220px;
+}
+
+/* BIENVENIDA */
+
+.bienvenida {
+    background: var(--azul-pastel);
+    text-align: center;
+}
+
+.bienvenida p {
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+/* HISTORIA */
+
+.historia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px #173c6715;
+    border: 1px solid #dce8f6;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tarjeta-contenido {
+    padding: 20px;
+}
+
+.fecha {
+    color: #2470b8;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* AVANCES */
+
+.avances {
+    background: #eaf4ff;
+}
+
+.categoria {
+    margin: 35px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #b8d7f8;
+}
+
+.avances-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.avance {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    background: white;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #153e6810;
+}
+
+.avance img {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    object-fit: cover;
+}
+
+.avance div {
+    padding: 18px;
+}
+
+.avance h3 {
+    font-size: 16px;
+}
+
+/* VENTAJAS Y DESVENTAJAS */
+
+.columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.lista {
+    padding: 25px;
+    background: white;
+    border-radius: 13px;
+    border-top: 5px solid #259c72;
+    box-shadow: 0 5px 15px #153e6810;
+}
+
+.lista.riesgos {
+    border-top-color: #e1a139;
+}
+
+.lista li {
+    margin: 12px 0 12px 20px;
+}
+
+/* GALERÍA */
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.galeria-grid figure {
+    overflow: hidden;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 5px 15px #153e6815;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform .3s;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.06);
+}
+
+.galeria-grid figcaption {
+    padding: 12px;
+    font-weight: bold;
+    color: #123e70;
+}
+
+/* CUESTIONARIO */
+
+#cuestionario {
+    background: #eaf4ff;
+}
+
+.pregunta {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 18px 0;
+    border: 1px solid #c9ddf2;
+}
+
+.pregunta h3 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.pregunta label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.pregunta input {
+    margin-right: 8px;
+}
+
+#resultado {
+    font-weight: bold;
+    font-size: 18px;
+    color: #1259a7;
+    margin-top: 15px;
+}
+
+/* COMENTARIOS */
+
+.formulario {
+    max-width: 800px;
+}
+
+.formulario label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 6px;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #b9cfe7;
+    border-radius: 8px;
+    font: 16px Arial, sans-serif;
+}
+
+.comentario {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+    border: 1px solid #dce8f6;
+    overflow-wrap: anywhere;
+}
+
+.comentario p {
+    white-space: pre-wrap;
+}
+
+.nota {
+    font-size: 13px;
+    color: #596d82;
+    margin-top: 12px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    text-align: center;
+    background: #071e42;
+    color: white;
+    padding: 30px 15px;
+}
+
+footer h3 {
+    color: var(--amarillo);
+    text-shadow: 0 0 10px #168bff;
+}
+
+footer a {
+    color: #b9dcff;
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 1050px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    nav {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav.activo {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    .inicio {
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+    .historia-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    section {
+        padding: 45px 5%;
+    }
+
+    .inicio {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio h1 {
+        font-size: 30px;
+    }
+
+    .historia-grid,
+    .avances-grid,
+    .columnas {
+        grid-template-columns: 1fr;
+    }
+
+    .avance {
+        grid-template-columns: 105px 1fr;
+    }
+
+    .avance img {
+        min-height: 100%;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galeria-grid img {
+        height: 130px;
+    }
+}
+
+@media (max-width: 390px) {
+    .avance {
+        grid-template-columns: 1fr;
+    }
+
+    .avance img {
+        height: 170px;
+    }
+
+    .logo h2 {
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+         <span class="logo-icono">⚕️📚</span>
+        <div>
+            <h2>TECNOLOGÍA</h2>
+            <small>EDUCACIÓN Y MEDICINA</small>
+        </div>
+    </div>
+
+    <button class="menu" id="menu" aria-label="Abrir menú"
+        aria-expanded="false">☰</button>
+
+    <nav id="navegacion">
+        <a href="#inicio">Inicio</a>
+        <a href="#historia">Historia</a>
+        <a href="#avances">Avances actuales</a>
+        <a href="#ventajas">Ventajas y desventajas</a>
+        <a href="#galeria">Galería</a>
+        <a href="#cuestionario">Cuestionario</a>
+        <a href="#comentarios">Comentarios</a>
+    </nav>
+</header>
+
+<main>
+
+<!-- INICIO -->
+
+<section class="inicio" id="inicio">
+    <div>
+        <p class="etiqueta">EDUCACIÓN · MEDICINA</p>
+        <h1>TECNOLOGÍA A TRAVÉS DEL TIEMPO</h1>
+        <p>
+            Bienvenidos a esta página informativa, donde conoceremos
+            cómo los avances tecnológicos han transformado nuestra
+            forma de aprender, enseñar, prevenir enfermedades y cuidar
+            la salud. Descubre los inventos que están cambiando el
+            presente y las posibilidades que nos esperan en el futuro.
+        </p>
+        <a class="boton" href="#historia">Comenzar recorrido ↓</a>
+    </div>
+
+    <div class="imagenes-inicio">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=85"
+             alt="Tecnología e innovación">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=85"
+             alt="Tecnología en medicina">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=85"
+             alt="Educación actual">
+    </div>
+</section>
+
+<section class="bienvenida">
+    <p class="etiqueta">BIENVENIDOS</p>
+    <h2>El conocimiento evoluciona</h2>
+    <p>
+        La tecnología se ha convertido en una herramienta importante
+        para el desarrollo de la sociedad. En la educación permite
+        acceder a información, realizar actividades interactivas y
+        aprender de nuevas maneras. En la medicina ayuda a detectar
+        enfermedades, estudiar el cuerpo humano y mejorar algunos
+        tratamientos. Su evolución continúa creando oportunidades,
+        pero también nos recuerda la importancia de utilizarla de
+        forma responsable, segura y accesible.
+    </p>
+</section>
+
+<!-- HISTORIA -->
+
+<section id="historia">
+    <p class="etiqueta">UN VIAJE EN EL TIEMPO</p>
+    <h2>Historia de la tecnología</h2>
+    <p>
+        La tecnología ha evolucionado gracias a la investigación,
+        la creatividad y las necesidades humanas. Tanto la educación
+        como la medicina han experimentado grandes transformaciones.
+    </p>
+
+    <div class="historia-grid">
+        <article class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=85"
+                 alt="Educación tradicional" loading="lazy">
+            <div class="tarjeta-contenido">
+                <p class="fecha">ANTES</p>
+                <h3>Educación y medicina de antes</h3>
+                <p>
+                    La educación se basaba principalmente en libros
+                    impresos, cuadernos, pizarras y explicaciones del
+                    docente. Buscar información podía requerir visitar
+                    bibliotecas y copiar los contenidos manualmente.
+                    La comunicación entre estudiantes y profesores
+                    dependía de encuentros presenciales.
+                </p>
+                <p>
+                    En medicina, los profesionales utilizaban la
+                    observación, la exploración física y herramientas
+                    de diagnóstico más limitadas. Existían menos
+                    métodos para identificar ciertas enfermedades y
+                    algunos tratamientos eran menos eficaces. La
+                    investigación científica fue fundamental para
+                    mejorar progresivamente la atención sanitaria.
+                </p>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?auto=format&fit=crop&w=800&q=85"
+                 alt="Educación moderna" loading="lazy">
+            <div class="tarjeta-contenido">
+                <p class="fecha">ACTUALIDAD</p>
+                <h3>Educación y medicina actuales</h3>
+                <p>
+                    Actualmente, los estudiantes pueden utilizar
+                    internet, plataformas virtuales, bibliotecas
+                    digitales, videos educativos y herramientas de
+                    inteligencia artificial. Las pizarras digitales
+                    y los recursos interactivos permiten explicar
+                    algunos temas de manera visual y participativa.
+                </p>
+                <p>
+                    En medicina, la resonancia magnética, la
+                    tomografía, la telemedicina y los sistemas
+                    informáticos facilitan diferentes tareas.
+                    También existen equipos robóticos y dispositivos
+                    inteligentes que apoyan algunos procedimientos
+                    y seguimientos. Estas tecnologías complementan
+                    el trabajo de los profesionales, quienes deben
+                    evaluar los resultados y atender a cada paciente.
+                </p>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=85"
+                 alt="Inteligencia artificial y futuro" loading="lazy">
+            <div class="tarjeta-contenido">
+                <p class="fecha">FUTURO</p>
+                <h3>Educación y medicina del futuro</h3>
+                <p>
+                    En el futuro podrían desarrollarse sistemas
+                    educativos capaces de adaptar actividades al
+                    ritmo de cada estudiante, experiencias de
+                    realidad virtual más avanzadas y laboratorios
+                    digitales. Estas herramientas podrían ayudar
+                    a comprender conceptos complejos y facilitar
+                    el acceso a materiales educativos.
+                </p>
+                <p>
+                    En medicina, los avances en genética,
+                    inteligencia artificial, robótica y monitoreo
+                    de la salud podrían contribuir a la prevención
+                    y a tratamientos más personalizados. Sin embargo,
+                    su eficacia dependerá de la investigación,
+                    la seguridad, la ética, la protección de datos
+                    y el acceso equitativo a estas innovaciones.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- AVANCES ACTUALES -->
+
+<section class="avances" id="avances">
+    <p class="etiqueta">INNOVACIONES QUE TRANSFORMAN</p>
+    <h2>Avances tecnológicos actuales</h2>
+    <p>
+        Conoce algunas de las herramientas que se utilizan en la
+        educación y la medicina para facilitar tareas, mejorar
+        procesos y ampliar las posibilidades de aprendizaje y atención.
+    </p>
+
+    <h3 class="categoria">Tecnología en la educación</h3>
+
+    <div class="avances-grid">
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=500&q=80"
+                 alt="Inteligencia artificial" loading="lazy">
+            <div>
+                <h3>1. Inteligencia artificial</h3>
+                <p>
+                    La inteligencia artificial permite que los
+                    programas realicen tareas como analizar datos,
+                    reconocer patrones y generar respuestas. En
+                    educación puede explicar conceptos, crear
+                    ejercicios y ofrecer orientación personalizada.
+                    Es importante verificar sus respuestas y utilizarla
+                    como apoyo, sin dejar de pensar ni aprender por
+                    cuenta propia.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=500&q=80"
+                 alt="Aula virtual" loading="lazy">
+            <div>
+                <h3>2. Aulas virtuales</h3>
+                <p>
+                    Son espacios digitales donde docentes y estudiantes
+                    comparten tareas, documentos, avisos, evaluaciones
+                    y actividades. Permiten organizar el aprendizaje
+                    y mantener la comunicación fuera del aula física.
+                    Para aprovecharlas se necesita conexión, organización
+                    y participación responsable.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=500&q=80"
+                 alt="Realidad virtual" loading="lazy">
+            <div>
+                <h3>3. Realidad virtual y aumentada</h3>
+                <p>
+                    La realidad virtual crea entornos digitales
+                    inmersivos, mientras que la realidad aumentada
+                    incorpora elementos digitales al mundo real.
+                    En educación pueden ayudar a explorar lugares,
+                    observar modelos tridimensionales y simular
+                    experiencias que serían difíciles de realizar
+                    dentro de un aula tradicional.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=500&q=80"
+                 alt="Biblioteca" loading="lazy">
+            <div>
+                <h3>4. Libros y bibliotecas digitales</h3>
+                <p>
+                    Son colecciones electrónicas de libros, revistas,
+                    documentos y otros recursos educativos. Facilitan
+                    la búsqueda de información y permiten consultar
+                    materiales desde diferentes dispositivos.
+                    Es necesario utilizar fuentes confiables, respetar
+                    los derechos de autor y considerar a quienes tienen
+                    acceso limitado a internet.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?auto=format&fit=crop&w=500&q=80"
+                 alt="Robótica" loading="lazy">
+            <div>
+                <h3>5. Robótica y programación</h3>
+                <p>
+                    La robótica combina mecanismos, electrónica y
+                    programación para construir sistemas capaces de
+                    realizar tareas. La programación consiste en
+                    crear instrucciones para una computadora o robot.
+                    Su aprendizaje fomenta la creatividad, el
+                    pensamiento lógico, la resolución de problemas
+                    y el trabajo en equipo.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80"
+                 alt="Clase en línea" loading="lazy">
+            <div>
+                <h3>6. Educación en línea</h3>
+                <p>
+                    Permite estudiar por internet mediante clases en
+                    vivo, videos, tareas y plataformas educativas.
+                    Puede facilitar el aprendizaje de personas que
+                    viven lejos de los centros educativos o necesitan
+                    horarios flexibles. Requiere responsabilidad,
+                    conexión adecuada y comunicación con los docentes.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=500&q=80"
+                 alt="Material educativo" loading="lazy">
+            <div>
+                <h3>7. Pizarras digitales interactivas</h3>
+                <p>
+                    Son pantallas electrónicas que permiten escribir,
+                    dibujar, mostrar videos y manipular contenidos.
+                    Ayudan a presentar temas visualmente y promueven
+                    la participación mediante actividades interactivas.
+                    Su utilidad depende de una buena planificación,
+                    mantenimiento y preparación de los docentes.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80"
+                 alt="Computadora y accesibilidad" loading="lazy">
+            <div>
+                <h3>8. Tecnología de accesibilidad</h3>
+                <p>
+                    Incluye lectores de pantalla, subtítulos,
+                    reconocimiento de voz, ampliación de texto y
+                    teclados adaptados. Estas herramientas ayudan
+                    a estudiantes con distintas necesidades a acceder
+                    a la información y participar en las actividades.
+                    Favorecen una educación más inclusiva y accesible.
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <h3 class="categoria">Tecnología en la medicina</h3>
+
+    <div class="avances-grid">
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80"
+                 alt="Profesional médico" loading="lazy">
+            <div>
+                <h3>1. Inteligencia artificial</h3>
+                <p>
+                    En medicina, la inteligencia artificial puede
+                    analizar grandes cantidades de datos y ayudar
+                    a identificar patrones en imágenes médicas,
+                    resultados de laboratorio e historiales clínicos.
+                    Puede apoyar determinadas tareas de diagnóstico
+                    y planificación. Sus resultados deben ser
+                    revisados por profesionales, ya que puede
+                    cometer errores.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=500&q=80"
+                 alt="Tecnología médica" loading="lazy">
+            <div>
+                <h3>2. Cirugías robóticas</h3>
+                <p>
+                    Son operaciones en las que un cirujano controla
+                    instrumentos robóticos especializados. Estos
+                    sistemas pueden ofrecer movimientos precisos y
+                    una visión ampliada en ciertos procedimientos.
+                    No sustituyen al cirujano: necesitan supervisión
+                    profesional, capacitación y una evaluación
+                    cuidadosa de los riesgos y beneficios.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=500&q=80"
+                 alt="Equipo médico de diagnóstico" loading="lazy">
+            <div>
+                <h3>3. Resonancia magnética y tomografía</h3>
+                <p>
+                    La resonancia magnética utiliza campos magnéticos
+                    y ondas de radio para producir imágenes detalladas
+                    de órganos y tejidos. La tomografía computarizada
+                    utiliza rayos X para obtener imágenes en cortes
+                    del cuerpo. Ambas ayudan a estudiar enfermedades
+                    y lesiones, según las necesidades del paciente.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=500&q=80"
+                 alt="Consulta médica" loading="lazy">
+            <div>
+                <h3>4. Telemedicina</h3>
+                <p>
+                    Permite realizar consultas y seguimientos médicos
+                    a distancia mediante llamadas, videollamadas o
+                    plataformas seguras. Puede facilitar la atención
+                    a personas que viven lejos de los centros de salud.
+                    Sin embargo, algunas situaciones requieren
+                    exploraciones presenciales, pruebas adicionales
+                    o atención urgente.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7f8a1?auto=format&fit=crop&w=500&q=80"
+                 alt="Fabricación tecnológica" loading="lazy">
+            <div>
+                <h3>5. Impresión 3D médica</h3>
+                <p>
+                    Utiliza impresoras que fabrican objetos
+                    tridimensionales a partir de diseños digitales.
+                    En medicina permite producir modelos anatómicos,
+                    ciertas prótesis y dispositivos personalizados.
+                    Estos productos necesitan materiales apropiados,
+                    controles de calidad y normas de seguridad para
+                    cada aplicación.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=500&q=80"
+                 alt="Dispositivo inteligente de salud" loading="lazy">
+            <div>
+                <h3>6. Dispositivos inteligentes de salud</h3>
+                <p>
+                    Los relojes inteligentes y algunos sensores pueden
+                    registrar actividad física, pulso y patrones de
+                    sueño. Sus datos ayudan a observar tendencias y,
+                    cuando corresponde, compartir información con
+                    profesionales. No todos tienen precisión médica,
+                    por lo que sus mediciones no reemplazan un
+                    diagnóstico ni una consulta profesional.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=500&q=80"
+                 alt="Investigación genética" loading="lazy">
+            <div>
+                <h3>7. Medicina genética</h3>
+                <p>
+                    Estudia cómo los genes influyen en la salud y en
+                    algunas enfermedades. Las pruebas genéticas
+                    pueden ayudar a identificar determinados riesgos
+                    y orientar tratamientos en casos específicos.
+                    Es importante proteger los datos genéticos,
+                    contar con asesoramiento profesional y considerar
+                    las implicaciones éticas de esta información.
+                </p>
+            </div>
+        </article>
+
+        <article class="avance">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=500&q=80"
+                 alt="Laboratorio de análisis" loading="lazy">
+            <div>
+                <h3>8. Laboratorios automatizados</h3>
+                <p>
+                    Utilizan equipos y sistemas informáticos para
+                    procesar muestras, realizar análisis y registrar
+                    resultados con menos manipulación manual.
+                    Pueden mejorar la rapidez y consistencia de
+                    algunas pruebas. Aun así, requieren mantenimiento,
+                    controles de calidad y personal capacitado para
+                    interpretar los resultados.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- VENTAJAS Y DESVENTAJAS -->
+
+<section id="ventajas">
+    <p class="etiqueta">USO RESPONSABLE</p>
+    <h2>Ventajas y desventajas</h2>
+    <p>
+        La tecnología puede mejorar la calidad de vida y facilitar
+        numerosas actividades. Sin embargo, su uso también presenta
+        dificultades que debemos conocer y prevenir.
+    </p>
+
+    <div class="columnas">
+        <article class="lista">
+            <h3>✓ Ventajas</h3>
+            <ul>
+                <li><strong>Educación:</strong> permite acceder a libros, videos y otras fuentes de información.</li>
+                <li><strong>Educación:</strong> facilita las clases a distancia y las actividades interactivas.</li>
+                <li><strong>Educación:</strong> ayuda a adaptar ciertos recursos a las necesidades de los estudiantes.</li>
+                <li><strong>Medicina:</strong> facilita el estudio del cuerpo y la detección de determinadas enfermedades.</li>
+                <li><strong>Medicina:</strong> ayuda a organizar información y realizar seguimientos de pacientes.</li>
+                <li><strong>Ambas áreas:</strong> mejora la comunicación y permite compartir información rápidamente.</li>
+            </ul>
+        </article>
+
+        <article class="lista riesgos">
+            <h3>! Desventajas y riesgos</h3>
+            <ul>
+                <li><strong>Educación:</strong> las distracciones digitales pueden dificultar la concentración.</li>
+                <li><strong>Educación:</strong> copiar respuestas automáticas puede impedir el aprendizaje real.</li>
+                <li><strong>Educación:</strong> la falta de dispositivos e internet limita las oportunidades.</li>
+                <li><strong>Medicina:</strong> los equipos pueden fallar y algunos resultados pueden ser incorrectos.</li>
+                <li><strong>Medicina:</strong> los datos de los pacientes pueden quedar expuestos si no se protegen.</li>
+                <li><strong>Ambas áreas:</strong> existen riesgos de información falsa, dependencia y costos elevados.</li>
+            </ul>
+        </article>
+    </div>
+
+    <div class="tarjeta-contenido" style="background:#dceeff;border-radius:12px;margin-top:25px">
+        <h3>¿Cómo mejora la tecnología nuestra vida?</h3>
+        <p>
+            En educación puede ampliar el acceso al conocimiento,
+            ofrecer nuevas formas de practicar y facilitar la
+            comunicación. En medicina puede ayudar a detectar
+            problemas, organizar resultados y apoyar determinados
+            tratamientos. Para obtener beneficios debemos verificar
+            la información, proteger los datos personales, respetar
+            los derechos de autor y mantener el criterio humano.
+            La tecnología debe complementar el trabajo de docentes
+            y profesionales de salud, no reemplazar automáticamente
+            sus conocimientos ni la atención personal.
+        </p>
+    </div>
+</section>
+
+<!-- GALERÍA -->
+
+<section id="galeria">
+    <p class="etiqueta">INNOVACIÓN EN IMÁGENES</p>
+    <h2>Galería tecnológica</h2>
+    <p>
+        Observa algunas imágenes relacionadas con los avances
+        tecnológicos que están transformando la educación y la medicina.
+    </p>
+
+    <div class="galeria-grid">
+        <figure>
+            <img src="imagenes/imagen1.webp" alt="Inteligencia artificial" loading="lazy">
+            <figcaption>Inteligencia artificial</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen2.webp" alt="Aula virtual" loading="lazy">
+            <figcaption>Aulas virtuales</figcaption>
+        </figure>
+        <figure>
+            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=600&q=85" alt="Realidad virtual" loading="lazy">
+            <figcaption>Realidad virtual</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen4.webp" alt="Libros digitales" loading="lazy">
+            <figcaption>Libros digitales</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen5.webp" alt="Robótica" loading="lazy">
+            <figcaption>Robótica</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen6.jpg" alt="Educacion en linea" loading="lazy">
+            <figcaption>Educacion en linea</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen7.jpg" alt="Pizarras Digitales" loading="lazy">
+            <figcaption>Pizarras Digitales Interactivas</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen8.jpg" alt="Tecnologia de Accesibilidad" loading="lazy">
+            <figcaption>Tecnologia de Accesibilidad</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen9.jpg" alt="Cirugias roboticas" loading="lazy">
+            <figcaption>Cirugias Roboticas</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen10.jpg" alt="Resonancia magnetica y Tomografias" loading="lazy">
+            <figcaption>Resonancia magnetica y Tomografias</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen11.jpg" alt="Telemedicina" loading="lazy">
+            <figcaption>Telemedicina</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen12.jpg" alt="Impresion 3D medica" loading="lazy">
+            <figcaption>Impresion 3D medica</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen13.jpg" alt="Impresion 3D medica" loading="lazy">
+            <figcaption>Dispositivos Inteligentes de Salud</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen15.jpg" alt="Impresion 3D medica" loading="lazy">
+            <figcaption>Medicina Genetica</figcaption>
+        </figure>
+        <figure>
+            <img src="imagenes/imagen14.jpg" alt="Impresion 3D medica" loading="lazy">
+            <figcaption>Laboratorios Automatizados</figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- CUESTIONARIO -->
+
+<section id="cuestionario">
+    <p class="etiqueta">PON A PRUEBA LO APRENDIDO</p>
+    <h2>Cuestionario interactivo</h2>
+    <p>
+        Responde las cinco preguntas y comprueba cuántas respuestas
+        correctas obtuviste.
+    </p>
+
+    <form id="form-quiz">
+
+        <div class="pregunta">
+            <h3>1. ¿Qué permite una biblioteca digital?</h3>
+            <label><input type="radio" name="q1" value="a" required>
+                Consultar libros y documentos electrónicamente.</label>
+            <label><input type="radio" name="q1" value="b">
+                Realizar operaciones quirúrgicas.</label>
+            <label><input type="radio" name="q1" value="c">
+                Evitar la lectura.</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>2. ¿Qué es la telemedicina?</h3>
+            <label><input type="radio" name="q2" value="a" required>
+                Una clase virtual.</label>
+            <label><input type="radio" name="q2" value="b">
+                Atención médica a distancia mediante tecnología.</label>
+            <label><input type="radio" name="q2" value="c">
+                Un libro digital.</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>3. ¿Para qué sirve la realidad virtual en educación?</h3>
+            <label><input type="radio" name="q3" value="a" required>
+                Para crear experiencias digitales inmersivas.</label>
+            <label><input type="radio" name="q3" value="b">
+                Para reemplazar siempre a los docentes.</label>
+            <label><input type="radio" name="q3" value="c">
+                Solo para guardar documentos.</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>4. ¿Quién debe supervisar los resultados de la IA médica?</h3>
+            <label><input type="radio" name="q4" value="a" required>
+                Nadie, porque nunca se equivoca.</label>
+            <label><input type="radio" name="q4" value="b">
+                Un profesional de salud capacitado.</label>
+            <label><input type="radio" name="q4" value="c">
+                Solo el paciente sin orientación.</label>
+        </div>
+
+        <div class="pregunta">
+            <h3>5. ¿Cuál es un riesgo tecnológico?</h3>
+            <label><input type="radio" name="q5" value="a" required>
+                Acceder a más recursos educativos.</label>
+            <label><input type="radio" name="q5" value="b">
+                Mejorar la comunicación.</label>
+            <label><input type="radio" name="q5" value="c">
+                Perder privacidad y difundir información falsa.</label>
+        </div>
+
+        <button class="boton" type="submit">Comprobar respuestas</button>
+        <button class="boton" type="reset">Volver a intentar</button>
+
+        <p id="resultado" role="status" aria-live="polite"></p>
+    </form>
+</section>
+
+<!-- COMENTARIOS -->
+
+<section id="comentarios">
+    <p class="etiqueta">TU OPINIÓN ES IMPORTANTE</p>
+    <h2>Deja tu comentario</h2>
+    <p>
+        ¿Qué avance tecnológico te pareció más interesante?
+        ¿Cómo crees que puede mejorar la educación o la medicina?
+        Comparte tu opinión.
+    </p>
+
+    <form class="formulario" id="form-comentario">
+        <label for="nombre">Nombre (opcional)</label>
+        <input type="text" id="nombre" maxlength="60"
+               placeholder="Escribe tu nombre">
+
+        <label for="mensaje">Tu comentario</label>
+        <textarea id="mensaje" rows="4" maxlength="600"
+                  placeholder="Escribe aquí tu opinión..." required></textarea>
+
+        <button class="boton" type="submit">Publicar comentario</button>
+    </form>
+
+    <p class="nota">
+        Los comentarios se mostrarán en esta página mientras permanezca
+        abierta. Esta versión no los envía a un servidor ni los comparte
+        con otros visitantes.
+    </p>
+
+    <div id="lista-comentarios"></div>
+</section>
+
+</main>
+
+<footer>
+    <h3>TECNOLOGÍA A TRAVÉS DEL TIEMPO</h3>
+    <p>La innovación tiene más valor cuando mejora la vida de las personas.</p>
+    <a href="#inicio">Volver al inicio ↑</a>
+</footer>
+
+<script>
+// MENÚ RESPONSIVO
+const botonMenu = document.getElementById("menu");
+const navegacion = document.getElementById("navegacion");
+
+botonMenu.addEventListener("click", function () {
+    const abierto = navegacion.classList.toggle("activo");
+    botonMenu.textContent = abierto ? "✕" : "☰";
+    botonMenu.setAttribute("aria-expanded", String(abierto));
+});
+
+navegacion.querySelectorAll("a").forEach(function (enlace) {
+    enlace.addEventListener("click", function () {
+        navegacion.classList.remove("activo");
+        botonMenu.textContent = "☰";
+        botonMenu.setAttribute("aria-expanded", "false");
+    });
+});
+
+// CUESTIONARIO INTERACTIVO
+const formularioQuiz = document.getElementById("form-quiz");
+const resultado = document.getElementById("resultado");
+
+const respuestas = {
+    q1: "a",
+    q2: "b",
+    q3: "a",
+    q4: "b",
+    q5: "c"
+};
+
+formularioQuiz.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    const datos = new FormData(formularioQuiz);
+    let puntos = 0;
+
+    for (const pregunta in respuestas) {
+        if (datos.get(pregunta) === respuestas[pregunta]) {
+            puntos++;
+        }
+    }
+
+    let mensaje;
+
+    if (puntos === 5) {
+        mensaje = "¡Excelente! Dominas los conceptos principales.";
+    } else if (puntos >= 3) {
+        mensaje = "¡Buen trabajo! Puedes repasar algunos conceptos.";
+    } else {
+        mensaje = "Sigue aprendiendo y vuelve a intentarlo.";
+    }
+
+    resultado.textContent =
+        "Tu resultado es " + puntos + " de 5. " + mensaje;
+});
+
+formularioQuiz.addEventListener("reset", function () {
+    resultado.textContent = "";
+});
+
+// FORMULARIO DE COMENTARIOS
+const formularioComentario = document.getElementById("form-comentario");
+const listaComentarios = document.getElementById("lista-comentarios");
+
+formularioComentario.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    const nombreIngresado =
+        document.getElementById("nombre").value.trim() || "Visitante";
+
+    const mensajeIngresado =
+        document.getElementById("mensaje").value.trim();
+
+    if (!mensajeIngresado) {
+        return;
+    }
+
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "comentario";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = nombreIngresado;
+
+    const texto = document.createElement("p");
+    texto.textContent = mensajeIngresado;
+
+    tarjeta.appendChild(titulo);
+    tarjeta.appendChild(texto);
+
+    listaComentarios.prepend(tarjeta);
+    formularioComentario.reset();
+});
+</script>
+
+</body>
+</html>
